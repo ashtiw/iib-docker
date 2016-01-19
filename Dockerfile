@@ -19,10 +19,11 @@ RUN apt-get update && \
 	
 
 # Install IIB V10 Developer edition
+# Changed zip file from 10.0.0.2 to 10.0.0.3 [20Jan2016]AT
 RUN mkdir /opt/ibm && \
-    curl http://public.dhe.ibm.com/ibmdl/export/pub/software/websphere/integration/10.0.0.2-IIB-LINUX64-DEVELOPER.tar.gz \
-    | tar zx --exclude iib-10.0.0.2/tools --directory /opt/ibm && \
-    /opt/ibm/iib-10.0.0.2/iib make registry global accept license silently
+    curl http://public.dhe.ibm.com/ibmdl/export/pub/software/websphere/integration/10.0.0.3-IIB-LINUX64-DEVELOPER.tar.gz \
+    | tar zx --exclude iib-10.0.0.3/tools --directory /opt/ibm && \
+    /opt/ibm/iib-10.0.0.3/iib make registry global accept license silently
 
 # Configure system
 COPY kernel_settings.sh /tmp/
